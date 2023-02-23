@@ -20,13 +20,14 @@ const readSensorData = () => {
       // function to convert celsius to fahrenheit
       temp_fahrenheit = data.temperature_C * 1.8 + 32;
       console.log("count :", data_count);
-      console.log("temp_c :", Math.round(data.temperature_C));
+      //console.log("temp_c :", Math.round(data.temperature_C));
 
       console.log("temp_f :", Math.round(temp_fahrenheit));
-      console.log("before_temp_f :", Math.round(current_fahrenheit));
+      //console.log("before_temp_f :", Math.round(current_fahrenheit));
 
       console.log("humidity :", Math.round(data.humidity));
-      console.log("before_humidity :", Math.round(current_humidity));
+      //console.log("before_humidity :", Math.round(current_humidity));
+      console.log("------------------------------------");
 
       error_retries = 0;
 
