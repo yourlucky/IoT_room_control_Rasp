@@ -1,5 +1,9 @@
 # ignore ALL .log files
 *.log
 
+# ignore folder name
+video_pic/
+
+
 # ignore ALL files in ANY directory named temp
 temp_humidity_sensor_Rasp.mov
