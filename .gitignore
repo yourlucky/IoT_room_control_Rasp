@@ -3,6 +3,7 @@
 
 # ignore folder name
 video_pic/
+personal_file
 
 
 # ignore ALL files in ANY directory named temp
