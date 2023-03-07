@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<link rel="stylesheet" href="css/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <title>Home IoT controller222</title>
+  </head>
+  <body>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="row" id="mid" style="margin: 200px">
+      <h2 id="clock">00:00</h2>
+      <form class="hidden" id="login-form">
+        <input
+          required
+          maxlength="15"
+          type="text"
+          placeholder="what is your name?"
+        />
+        <input type="submit" value="Log in" />
+      </form>
+      <h1 class="hidden" id="greeting"></h1>
+      <form id="todo-form">
+        <input type="text" placeholder="what is your plan?" required />
+      </form>
+      <ul id="todo-list"></ul>
+
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
+
+      <div id="bgImage">
+        <img src="{{url_for('static', filename='img/4.jpeg')}}" />
+      </div>
+    </div>
+    <div
+      id="LED"
+      style="
+        position: fixed;
+        right: 32px;
+        top: 32px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0 10px;
+      "
+    >
+      <h1>Control LED on the Web</h1>
+      <!--hr은 수평 가로줄을 그려줌-->
+      <hr />
+
+      <div style="padding-left: 20px">
+        <!--h3는 중간크기 글씨로 글자를 써줌-->
+        <h3>LED Switch</h3>
+        <!--p는 위아래로 한줄 띄어서 글자를 써줌-->
+        <p style="color: red">
+          <!--b는 글자를 굵게(bold) 표시함-->
+          <b>RED LED: </b>
+          <!--버튼을 만들어서, 버튼을 누르면 파이썬 코드의 LED_control, LED_blink 함수가 실행됨-->
+          <!--color와 state는 함수의 입력인자-->
+          <a href="{{ url_for('LED_control', color='red', state=1) }}"
+            ><input type="button" value="ON"
+          /></a>
+          <a href="{{ url_for('LED_blink', color='red') }}"
+            ><input type="button" value="blink"
+          /></a>
+          <a href="{{ url_for('LED_control', color='red', state=0) }}">
+            <input type="button" value="OFF" />
+          </a>
+          <!--ON, OFF 버튼을 누르면 파이썬 파일의 LED_control 함수가 실행되며, 함수에 color와 state를 넘겨줌-->
+          <!--blink 버튼을 누르면 파이썬 파일의 LED_blink 함수가 실행되며, 함수에 color를 넘겨줌-->
+        </p>
+        <p style="color: green">
+          <b>GREEN LED: </b>
+          <a href="{{ url_for('LED_control', color='green', state=1) }}"
+            ><input type="button" value="ON"
+          /></a>
+          <a href="{{ url_for('LED_blink', color='green') }}"
+            ><input type="button" value="blink"
+          /></a>
+          <a href="{{ url_for('LED_control', color='green', state=0) }}">
+            <input type="button" value="OFF" />
+          </a>
+        </p>
+        <p style="color: blue">
+          <b>BLUE LED: </b>
+          <a href="{{ url_for('LED_control', color='blue', state=1) }}"
+            ><input type="button" value="ON"
+          /></a>
+          <a href="{{ url_for('LED_blink', color='blue') }}"
+            ><input type="button" value="blink"
+          /></a>
+          <a href="{{ url_for('LED_control', color='blue', state=0) }}">
+            <input type="button" value="OFF" />
+          </a>
+        </p>
+        <hr />
+        <h3>Magic switch</h3>
+        <p style="padding-left: 50px">
+          <a href="{{ url_for('whole_control', state=1) }}">
+            <input type="button" value="ON"
+          /></a>
+          <a href="{{ url_for('whole_control', state=2) }}">
+            <input type="button" value="blink"
+          /></a>
+          <a href="{{ url_for('whole_control', state=0) }}">
+            <input type="button" value="OFF" />
+          </a>
+          <!--ON, OFF 버튼을 누르면 파이썬 파일의 whole_control 함수가 실행되며, 함수에 state 0 혹은 1을 넘겨줌-->
+          <!--3 sec 버튼을 누르면 파이썬 파일의 whole_control 함수가 실행되며, 함수에 state 2를 넘겨줌-->
+        </p>
+        <hr />
+      </div>
+    </div>
+    <script src="{{url_for('static',filename='js/greetings.js')}}"></script>
+    <script src="{{url_for('static',filename='js/clock.js')}}"></script>
+    <script src="{{url_for('static',filename='js/quotes.js')}}"></script>
+    <!--<script src="{{url_for('static',filename='js/background.js')}}"></script>-->
+    <script src="{{url_for('static',filename='js/todo.js')}}"></script>
+    <!-- raspberry doesn't have gps-->
+    <script src="{{url_for('static',filename='js/weather.js')}}"></script>
+  </body>
+</html>
