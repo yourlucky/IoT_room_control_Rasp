@@ -1,7 +1,7 @@
 # ignore ALL .log files
 *.log
 .DS_Store
-.csv
+*.csv
 
 # ignore folder name
 video_pic/
