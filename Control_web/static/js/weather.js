@@ -7,7 +7,7 @@ function onGeoOk() {
   const lat = 41.9018359;
   const lng = -87.630292;
   console.log("You live in", lat, lng);
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}`;
   fetch(url)
     .then((Response) => Response.json())
     .then((data) => {
