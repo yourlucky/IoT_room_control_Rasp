@@ -56,11 +56,11 @@ def LED_blink(color):
 
 @app.route('/all/<int:state>')                # for all LED turn on/off and blink
 def whole_control(state):                    
-    if state is 0 or state is 1:                            
+    if state == 0 or state == 1:                            
         for color_idx in ['red', 'green', 'blue']:          
             thread_state[color_idx] = False                
             GPIO.output(led_pin_dict[color_idx], state)     
-    elif state is 2:                                        
+    elif state == 2:                                        
         for color_idx in ['red', 'green', 'blue']:          
             thread_state[color_idx] = True                   
     return redirect(url_for('home'))                        

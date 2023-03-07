@@ -79,17 +79,15 @@ function get_time() {
 //write data to file
 function write_f(FILE_NAME, data) {
   // # of data, time, temperature_celsius, temperature_fahrenheit, humidity
-  const head_row =
-    "#,time,temperature_celsius,temperature_fahrenheit,humidity\n";
-  const one_row = `${data_count},${get_time()},${
-    Math.round(data.temperature_C * 100) / 100
-  },${Math.round(data.temperature_C * 1.8 + 32)},${Math.round(
+  //const head_row =
+  //  "#,time,temperature_celsius,temperature_fahrenheit,humidity\n";
+  const one_row = `${Math.round(data.temperature_C * 1.8 + 32)},${Math.round(
     data.humidity
   )}\n`;
 
-  let new_data = head_row.concat(one_row);
+  //let new_data = head_row.concat(one_row);
 
-  fs.writeFile(FILE_NAME, new_data, (err) => {
+  fs.writeFile(FILE_NAME, one_row, (err) => {
     if (err) {
       console.error(err);
       return;

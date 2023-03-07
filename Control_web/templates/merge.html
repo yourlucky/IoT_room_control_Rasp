@@ -18,18 +18,13 @@
     </div>
 
     <div id="BME280_sensor" , align="center">
-      <table>
-        <h1>
-          {% for table in tables %}
-          <h2>{{titles[loop.index]}}</h2>
-          {{ table|safe }} {% endfor %}
-        </h1>
-      </table>
-    </div>
-
-    <div id="my_senosr">
-      <span></span>
-      <span></span>
+        <table>
+          <h1>
+            {% for table in tables %}
+            <h2>{{titles[loop.index]}}</h2>
+            {{ table|safe }} {% endfor %}
+          </h1>
+        </table>
     </div>
     <div class="row" id="mid" style="margin: 200px">
       <h2 id="clock">00:00</h2>
