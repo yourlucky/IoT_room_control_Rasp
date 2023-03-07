@@ -3,7 +3,8 @@
 
 1) Control LED on the Web by python flask
 
-<img width="553" src="https://user-images.githubusercontent.com/74134434/222587228-4de43c62-dc62-496b-9402-59b909ec73e5.png">
+<img width="1636" alt="Screenshot 2023-03-06 at 21 28 02" src="https://user-images.githubusercontent.com/74134434/223313454-053aec46-89ae-42ad-aab6-51ba114e79f4.png">
+
 
 2) Temperature/Humidity (BME220) Sensor  by javascript
   : https://youtu.be/_6qmTGQIzXA
