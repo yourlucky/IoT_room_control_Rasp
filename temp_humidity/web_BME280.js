@@ -3,6 +3,7 @@ const BME280 = require("bme280-sensor");
 const READ_INTERVAL = 1000; // sensor read interval for a second
 const MAX_RETRIES = 3; // max number of retries to read sensor data
 const END_COUNTER = 10; // sensor read interval for a second
+const FILE_NAME = "../data.csv";
 
 // configuation obj for BME280
 const options = {
@@ -36,13 +37,14 @@ const readSensorData = () => {
         Math.abs(temp_fahrenheit - current_fahrenheit) >= 1 ||
         Math.abs(data.humidity - current_humidity) >= 1
       ) {
-        data_count++;
-        write_f(file_name, data);
+        data_count++; //get new sensor data for every 1 second
+        write_f(FILE_NAME, data);
         current_fahrenheit = temp_fahrenheit;
         current_humidity = data.humidity;
       }
 
-      if (data_count < END_COUNTER) {
+      //get new sensor data for every 1 second
+      if (data_count > -1) {
         setTimeout(readSensorData, READ_INTERVAL);
       }
     })
@@ -75,15 +77,19 @@ function get_time() {
 }
 
 //write data to file
-function write_f(file_name, data) {
+function write_f(FILE_NAME, data) {
   // # of data, time, temperature_celsius, temperature_fahrenheit, humidity
+  const head_row =
+    "#,time,temperature_celsius,temperature_fahrenheit,humidity\n";
   const one_row = `${data_count},${get_time()},${
     Math.round(data.temperature_C * 100) / 100
   },${Math.round(data.temperature_C * 1.8 + 32)},${Math.round(
     data.humidity
   )}\n`;
 
-  fs.appendFileSync(file_name, one_row, (err) => {
+  let new_data = head_row.concat(one_row);
+
+  fs.writeFile(FILE_NAME, new_data, (err) => {
     if (err) {
       console.error(err);
       return;
@@ -92,17 +98,21 @@ function write_f(file_name, data) {
 }
 
 //create csv file and write header
-const head_row = "#,time,temperature_celsius,temperature_fahrenheit,humidity\n";
-const file_name = "senor_data" + get_time() + ".csv";
-
-
-
-fs.appendFileSync(file_name, head_row, (err) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-});
+// fs.existsSync('data.csv',function(exists){
+//   if(exists){
+//     console.log('file exist');
+//   }
+//   else{
+//     const head_row = "#,time,temperature_celsius,temperature_fahrenheit,humidity\n";
+//     const file_name = "senor.csv";
+//     fs.appendFileSync(file_name, head_row, (err) => {
+//     if (err) {
+//       console.error(err);
+//       return;
+//     }
+//   })
+//   }
+// });
 
 //# of data for csv line
 let data_count = 0;

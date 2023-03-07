@@ -5,6 +5,7 @@
 # ignore folder name
 video_pic/
 personal_file
+node_modules/
 
 
 # ignore ALL files in ANY directory named temp

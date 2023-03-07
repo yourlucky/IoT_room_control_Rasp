@@ -61,6 +61,15 @@ body {
   color: white;
 }
 
+#BME280_sensor {
+  font-size: 30px;
+  background-color: transparent;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  color: white;
+}
+
 #weather .active {
   color: tomato;
 }
