@@ -3,12 +3,12 @@
 
 1) Control LED on the Web by python flask <br/>
 
-  From Raspberry BME280 <br/>
+  * From Raspberry BME280 <br/>
     : Get room temperature, humidity <br/>
     : Control LED <br/>
-  From Web API<br/>
-    : Get outside temperatue, weather <br/>
-  Others <br/>
+  * From Web API<br/>
+    : Get outside temperature, weather <br/>
+  * Others <br/>
     : To-do list <br/>
     : Greeting message <br/>
 
