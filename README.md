@@ -48,7 +48,7 @@ Run HTML </br>
 $ python3 Control_web/Room_IoT_LED_Sensor.py </br>
 ```
 > type URL on the (chrome)Browser –URL on 70 line (your Raspberry IP) </br>
-> # tip: Change any random value for the port number when you get the port error. </br>
+> tip: Change any random value for the port number when you get the port error. </br>
 
  * Without the sensor </br>
   ``` bash
