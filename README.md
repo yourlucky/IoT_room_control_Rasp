@@ -5,14 +5,14 @@ Video Link : https://youtu.be/7tV5KoYnHwk <br/>
 <br/>
 1) Control LED on the Web by python flask <br/>
 
-  * From Raspberry BME280 <br/>
-    : Get room temperature, humidity <br/>
-    : Control LED <br/>
-  * From Web API<br/>
-    : Get outside temperature, weather <br/>
-  * Others <br/>
-    : To-do list <br/>
-    : Greeting message <br/>
+  >* From Raspberry BME280 <br/>
+  >  : Get room temperature, humidity <br/>
+  >  : Control LED <br/>
+  >* From Web API<br/>
+  >  : Get outside temperature, weather <br/>
+  >* Others <br/>
+  >  : To-do list <br/>
+  >  : Greeting message <br/>
     
 <img width="1607" alt="Room_iot" src="https://user-images.githubusercontent.com/74134434/223565123-eb1c1202-06da-4a74-93b7-6ff18d83d6e5.png">
 
