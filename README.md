@@ -30,20 +30,28 @@ Video Link : https://youtu.be/7tV5KoYnHwk <br/>
 Run BME280 Sensor</br>
 
  * Get data with the accumulated </br>
-        command: node temp_humidity/BME280_data_collect.js </br>
-        output: sensor_data20230307163611.csv </br>
+``` bash
+$ node temp_humidity/BME280_data_collect.js </br>
+```
+ > output: `sensor_data20230307163611.csv` </br>
 
 
 * Get data for the Web (specific format for web) </br>
-      Command: node temp_humidity/web_BME280.js </br>
-      output: data.csv
+``` bash
+$ node temp_humidity/web_BME280.js </br>
+```
+>  output: `data.csv`
 
 Run HTML </br>
  * With the BME280 sensor </br>
-       Command: python3 Control_web/Room_IoT_LED_Sensor.py </br>
-       type URL on the (chrome)Browser –URL on 70 line (your Raspberry IP) </br>
-       # tip: Change any random value for the port number when you get the port error. </br>
+ ``` bash
+$ python3 Control_web/Room_IoT_LED_Sensor.py </br>
+```
+> type URL on the (chrome)Browser –URL on 70 line (your Raspberry IP) </br>
+> # tip: Change any random value for the port number when you get the port error. </br>
 
  * Without the sensor </br>
-       Command: python3 Control_web/Room_IoT_LED.py </br>
-       type URL on the (chrome)Browser –URL on 70 line (your Raspberry IP) </br>
+  ``` bash
+$ python3 Control_web/Room_IoT_LED.py </br>
+```
+>type URL on the (chrome)Browser –URL on 70 line (your Raspberry IP) </br>
